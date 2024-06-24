@@ -3,7 +3,7 @@ body {
   padding: 0;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: rgb(22, 22, 22);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,10 +25,16 @@ body {
 .App {
   width: 375px;  /* iPhone Xの横幅 */
   height: 812px;  /* iPhone Xの縦幅 */
+  text-align: center;
 }
 
 canvas {
   width: 100% !important;
   height: 100% !important;
   background-color: rgb(44, 44, 44);
+}
+h1 {
+  font-size: 2em;
+  margin: 20px 0;
+  color: #ffffff;
 }

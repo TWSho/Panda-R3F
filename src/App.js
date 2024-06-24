@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Canvas } from '@react-three/fiber';
-import { OrthographicCamera } from '@react-three/drei';
+import { OrthographicCamera ,Text } from '@react-three/drei';
 import Light from './Light'; // Lightコンポーネントをインポート
 import { useRef } from 'react';
 import { useSpring, animated } from '@react-spring/three';
@@ -81,9 +81,11 @@ export default function App() {
       onTouchEnd={handleEnd}
       style={{ touchAction: 'none', width: '100vw', height: '100vh' }} // タッチアクションを無効化
     >
+      <h1>Panda-R3F</h1>
       <Canvas>
         <OrthographicCamera makeDefault position={[0, 0, 10]} zoom={50} />
         <Light />
+        <Hint />
         <Box position={boxPosition} />
       </Canvas>
     </div>
@@ -102,5 +104,17 @@ function Box({ position }) {
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color="hotpink" />
     </animated.mesh>
+  );
+}
+// Boxコンポーネント
+function Hint() {
+  return (
+    <Text 
+    position={[0, 3, 0]} 
+    fontSize={0.5} 
+    color="white"
+  >
+    画面をフリックしてみよう！
+  </Text>
   );
 }
