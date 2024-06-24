@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Panda-R3F/static/css/main.63fd9dfd.css",
+    "main.js": "/Panda-R3F/static/js/main.478e4d17.js",
+    "index.html": "/Panda-R3F/index.html",
+    "main.63fd9dfd.css.map": "/Panda-R3F/static/css/main.63fd9dfd.css.map",
+    "main.478e4d17.js.map": "/Panda-R3F/static/js/main.478e4d17.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.63fd9dfd.css",
+    "static/js/main.478e4d17.js"
+  ]
+}
