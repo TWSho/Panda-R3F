@@ -13,7 +13,15 @@ export default function App() {
   const touchEndX = useRef(0);
   const touchEndY = useRef(0);
   const threshold = 50; // スワイプと判断するための最小距離
-  
+
+  const handleTouchStart = (e) => {
+    handleStart(e.touches[0].clientX, e.touches[0].clientY);
+  };
+
+  const handleTouchMove = (e) => {
+    handleMove(e.touches[0].clientX, e.touches[0].clientY);
+  };
+
   const handleStart = (clientX, clientY) => {
     touchStartX.current = clientX;
     touchStartY.current = clientY;
@@ -33,7 +41,7 @@ export default function App() {
     handleMove(e.clientX, e.clientY);
   };
 
-  const handleTouchEnd = () => {
+  const handleEnd = () => {
     const deltaX = touchEndX.current - touchStartX.current;
     const deltaY = touchEndY.current - touchStartY.current;
 
@@ -67,7 +75,11 @@ export default function App() {
       className="App"
       onMouseDown={handleMouseStart}
       onMouseMove={handleMouseMove}
-      onMouseUp={handleTouchEnd}
+      onMouseUp={handleEnd}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleEnd}
+      style={{ touchAction: 'none', width: '100vw', height: '100vh' }} // タッチアクションを無効化
     >
       <Canvas>
         <OrthographicCamera makeDefault position={[0, 0, 10]} zoom={50} />
@@ -88,7 +100,7 @@ function Box({ position }) {
   return (
     <animated.mesh position={pos}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color="orange" />
+      <meshStandardMaterial color="hotpink" />
     </animated.mesh>
   );
 }
