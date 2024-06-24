@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Panda-R3F/static/css/main.63fd9dfd.css",
-    "main.js": "/Panda-R3F/static/js/main.f2feb9be.js",
+    "main.css": "/Panda-R3F/static/css/main.56e2d48c.css",
+    "main.js": "/Panda-R3F/static/js/main.457731cf.js",
     "index.html": "/Panda-R3F/index.html",
-    "main.63fd9dfd.css.map": "/Panda-R3F/static/css/main.63fd9dfd.css.map",
-    "main.f2feb9be.js.map": "/Panda-R3F/static/js/main.f2feb9be.js.map"
+    "main.56e2d48c.css.map": "/Panda-R3F/static/css/main.56e2d48c.css.map",
+    "main.457731cf.js.map": "/Panda-R3F/static/js/main.457731cf.js.map"
   },
   "entrypoints": [
-    "static/css/main.63fd9dfd.css",
-    "static/js/main.f2feb9be.js"
+    "static/css/main.56e2d48c.css",
+    "static/js/main.457731cf.js"
   ]
 }
