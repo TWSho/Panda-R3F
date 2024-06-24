@@ -85,7 +85,7 @@ export default function App() {
       <Canvas>
         <OrthographicCamera makeDefault position={[0, 0, 10]} zoom={50} />
         <Light />
-        <Hint />
+        <Tips />
         <Box position={boxPosition} />
       </Canvas>
     </div>
@@ -107,7 +107,7 @@ function Box({ position }) {
   );
 }
 // Boxコンポーネント
-function Hint() {
+function Tips() {
   return (
     <Text 
     position={[0, 3, 0]} 
