@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useLoader  } from '@react-three/fiber';
 import { OrthographicCamera ,Text } from '@react-three/drei';
 import Light from './Light'; // Lightコンポーネントをインポート
 import { useRef } from 'react';
 import { useSpring, animated } from '@react-spring/three';
+import { TextureLoader } from 'three';
+
+
+
+
 
 export default function App() {
   const [boxPosition, setBoxPosition] = useState([0, 0, 0]);
@@ -94,6 +99,7 @@ export default function App() {
 
 // Boxコンポーネント
 function Box({ position }) {
+  const texture = useLoader(TextureLoader, `${process.env.PUBLIC_URL}/favicon.ico`);
   const { pos } = useSpring({
     pos: position,
     config: { tension: 500, friction: 30 }, // アニメーションの設定
@@ -102,7 +108,7 @@ function Box({ position }) {
   return (
     <animated.mesh position={pos}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color="hotpink" />
+      <meshStandardMaterial map={texture} />
     </animated.mesh>
   );
 }
